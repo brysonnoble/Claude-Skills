@@ -61,3 +61,21 @@ in Chrome for review. Covers first-time setup (resume + criteria
 interview), a normal search/apply run, and setting up a recurring
 scheduled run (daily digest by default, no auto-apply unless explicitly
 configured).
+
+### `meal-tracker`
+
+Logs meals dropped into chat as photos or text descriptions into a personal
+nutrition log (`data/log.csv`), with estimated calories and macros plus a
+qualitative note. On first use it interviews you for sex, height, weight,
+age, activity level, dietary restrictions, and goals (`data/profile.md`),
+then uses that profile plus your logged history to give grounded diet
+advice and meal suggestions instead of generic tips. Bundles a script
+(`scripts/summarize_log.py`) for accurate daily/weekly nutrition totals
+when you ask for a recap.
+
+The log and profile only live on this computer, so when you're on your
+phone (Cowork with no linked device) or otherwise away from a session that
+can reach this repo, the skill queues new entries in Claude's memory
+instead and folds them into `data/log.csv`/`data/profile.md` automatically
+the next time it runs somewhere with access — nothing gets lost, it just
+syncs a little late.
